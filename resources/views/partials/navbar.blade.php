@@ -20,8 +20,7 @@
         <div class="navbar-collapse collapse" id="navigation">
 
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="/">Home</a>
-                </li>
+                <li class="active"><a href="/">Home</a></li>
                 <li class="dropdown yamm-fw">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Categories
                         <b class="caret"></b></a>
@@ -53,13 +52,42 @@
         <div class="navbar-buttons">
 
             <div class="navbar-collapse collapse right">
-                <a href="{{ route('login') }}" class="btn btn-primary navbar-btn">
-                    <span class="hidden-sm">Login</span>
-                </a>
+                @if(!Auth::check())
+                    <a href="{{ route('login') }}" class="btn btn-primary navbar-btn">
+                        <span class="hidden-sm">Login</span>
+                    </a>
 
-                <a href="{{ route('register') }}" class="btn btn-primary navbar-btn">
-                    <span class="hidden-sm">Signup</span>
-                </a>
+                    <a href="{{ route('register') }}" class="btn btn-primary navbar-btn">
+                        <span class="hidden-sm">Signup</span>
+                    </a>
+                @else
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                          style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                @endif
             </div>
 
             <div class="navbar-collapse collapse right" id="search-not-mobile">
@@ -68,7 +96,6 @@
                     <i class="fa fa-search"></i>
                 </button>
             </div>
-
         </div>
 
         <div class="collapse clearfix" id="search">
