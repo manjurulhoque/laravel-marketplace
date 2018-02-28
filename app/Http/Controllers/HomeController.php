@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     protected $slider;
-    function __construct(Slider $slider)
+
+    public function __construct(Slider $slider)
     {
         $this->slider = $slider;
     }
@@ -16,6 +17,7 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = $this->slider::all();
+
         return view('index', compact('sliders'));
     }
 }
