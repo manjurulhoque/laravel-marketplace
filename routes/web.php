@@ -1,5 +1,3 @@
 <?php
 
-Route::get('/', function () {
-    return view('app');
-});
+Route::get('/', 'HomeController@index');
