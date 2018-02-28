@@ -20,7 +20,7 @@
 <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
 <link href="{{ asset('css/owl.theme.css') }}" rel="stylesheet">
 
-<link href="{{ asset('css/style.default.css') }}" rel="stylesheet" id="theme-stylesheet">
+<link href="{{ asset('css/style.violet.css') }}" rel="stylesheet" id="theme-stylesheet">
 
 <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
