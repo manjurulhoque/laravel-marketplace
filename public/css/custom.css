@@ -1,1 +1,18 @@
-/** Your theme modifications here **/
+.wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.wrap textarea {
+    text-indent: 84px;
+    font: 400 40px/45px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.wrap span {
+    position: absolute;
+    top: 7px;
+    left: 20px;
+    color: #dddddd;
+    padding-right: 6px;
+    font: 400 40px/45px "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
