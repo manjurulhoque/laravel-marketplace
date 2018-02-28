@@ -52,12 +52,23 @@
 
         <div class="navbar-buttons">
 
+            <div class="navbar-collapse collapse right">
+                <a href="{{ route('login') }}" class="btn btn-primary navbar-btn">
+                    <span class="hidden-sm">Login</span>
+                </a>
+
+                <a href="{{ route('register') }}" class="btn btn-primary navbar-btn">
+                    <span class="hidden-sm">Signup</span>
+                </a>
+            </div>
+
             <div class="navbar-collapse collapse right" id="search-not-mobile">
                 <button type="button" class="btn navbar-btn btn-primary" data-toggle="collapse" data-target="#search">
                     <span class="sr-only">Toggle search</span>
                     <i class="fa fa-search"></i>
                 </button>
             </div>
+
         </div>
 
         <div class="collapse clearfix" id="search">
