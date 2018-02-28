@@ -69,7 +69,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('gigs.create') }}">Create a gig</a></li>
-                                <li><a href="#">Another action</a></li>
+                                <li><a href="{{ route('my_gigs') }}">My Gigs</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li>

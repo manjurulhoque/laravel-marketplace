@@ -24,7 +24,8 @@ class GigController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $gigs = Auth::user()->gigs;
+        return view('gig.index', compact('gigs'));
     }
 
     /**
@@ -47,6 +48,7 @@ class GigController extends Controller
     {
         $this->gig->user_id = Auth::user()->id;
         $this->gig->title = $request->title;
+        $this->gig->slug = str_slug($request->title);
         $this->gig->category = $request->category;
         $this->gig->description = $request->description;
         $this->gig->price = $request->price;
@@ -55,7 +57,7 @@ class GigController extends Controller
         if ($request->hasFile('photo')) {
             $image = $request->file('photo');
             $filename = time() . '.' . $image->getClientOriginalExtension();
-            $location = public_path('gigs/img' . $filename);
+            $location = public_path('gigs/img/' . $filename);
             Image::make($image)->resize(800, 400)->save($location);
             $this->gig->image = $filename;
         }
@@ -71,9 +73,10 @@ class GigController extends Controller
      * @param  \App\Gig $gig
      * @return \Illuminate\Http\Response
      */
-    public function show(Gig $gig)
+    public function show($gig)
     {
-        //
+        $gig = Gig::find($gig);
+        return view('gig.details')->withGig($gig);
     }
 
     /**
