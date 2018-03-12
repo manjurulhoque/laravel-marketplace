@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Gig;
 use App\Http\Requests\GigCreateRequest;
 use Illuminate\Http\Request;
@@ -35,7 +36,8 @@ class GigController extends Controller
      */
     public function create()
     {
-        return view('gig.create');
+        $categories = Category::all();
+        return view('gig.create', compact('categories'));
     }
 
     /**

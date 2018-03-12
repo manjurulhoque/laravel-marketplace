@@ -18,11 +18,9 @@
                     <label for="category" class="col-sm-2 control-label">CATEGORY</label>
                     <div class="col-sm-10">
                         <select id="category" name="category" class="form-control">
-                            <option value="GD">Graphis & Design</option>
-                            <option value="DM">Digital & Marketing</option>
-                            <option value="VA">Video & Animation</option>
-                            <option value="MA">Music & Video</option>
-                            <option value="PT">Programming & Tech</option>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{ $category->title }}</option>
+                            @endforeach
                         </select>
                     </div>
                 </div>
