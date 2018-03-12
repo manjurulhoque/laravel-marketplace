@@ -31,13 +31,20 @@
                                     <div class="col-sm-3">
                                         <h5>Category</h5>
                                         <ul>
-                                            <li><a href="#">Programming</a>
+                                            <li>
+                                                <a href="#">Graphis & Design</a>
                                             </li>
-                                            <li><a href="#">Shirts</a>
+                                            <li>
+                                                <a href="#">Digital & Marketing</a>
                                             </li>
-                                            <li><a href="#">Pants</a>
+                                            <li>
+                                                <a href="#">Video & Animation</a>
                                             </li>
-                                            <li><a href="#">Accessories</a>
+                                            <li>
+                                                <a href="#">Music & Video</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Programming & Tech</a>
                                             </li>
                                         </ul>
                                     </div>
