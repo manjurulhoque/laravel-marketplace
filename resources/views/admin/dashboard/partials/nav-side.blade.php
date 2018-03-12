@@ -247,10 +247,10 @@
                     </a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="categories.php">Categories</a>
+                            <a href="{{ route('admin.categories.index') }}">Categories</a>
                         </li>
                         <li>
-                            <a href="create-category.php">Create Category</a>
+                            <a href="{{ route('admin.categories.create') }}">Create Category</a>
                         </li>
                     </ul>
                     <!-- /.nav-second-level -->

@@ -25,4 +25,7 @@ Route::group(['prefix' => 'admin'], function () {
 // admin functions
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
     Route::get('/dashboard', 'Admin\AdminController@index');
+    Route::resource('/categories', 'Admin\CategoryController', [
+        'as' => 'admin'
+    ]);
 });
