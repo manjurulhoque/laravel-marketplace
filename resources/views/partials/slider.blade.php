@@ -3,7 +3,7 @@
         <div id="main-slider">
             @foreach($sliders as $slider)
                 <div class="item">
-                    <img src="{{ asset($slider->image) }}" style="width: 100%" alt="" class="img-responsive">
+                    <img src="{{ asset('/sliders/'.$slider->image) }}" style="width: 100%; height: 300px" alt="" class="img-responsive">
                 </div>
             @endforeach
         </div>

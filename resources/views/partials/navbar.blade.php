@@ -59,7 +59,7 @@
         <div class="navbar-buttons">
 
             <div class="navbar-collapse collapse right">
-                @if(!Auth::check())
+                @if(!Auth::check() || Auth::user()->is_admin == 1)
                     <a href="{{ route('login') }}" class="btn btn-primary navbar-btn">
                         <span class="hidden-sm">Login</span>
                     </a>
