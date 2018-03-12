@@ -1,6 +1,7 @@
 <?php
 
 Route::get('/', 'HomeController@index');
+Route::get('/search', 'HomeController@search')->name('search');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

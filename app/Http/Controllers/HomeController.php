@@ -24,4 +24,12 @@ class HomeController extends Controller
 
         return view('index', compact(['sliders', 'gigs']));
     }
+
+    public function search(Request $request)
+    {
+        $q = $request->q;
+        $gigs = $this->gig::where('title','like','%'.$q.'%')->get();
+
+        return view('search', compact('gigs'));
+    }
 }
