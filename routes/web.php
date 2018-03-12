@@ -29,4 +29,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     Route::resource('/categories', 'Admin\CategoryController', [
         'as' => 'admin'
     ]);
+
+    Route::resource('/sliders', 'Admin\SliderController', [
+        'as' => 'admin'
+    ]);
 });

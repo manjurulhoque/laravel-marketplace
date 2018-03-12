@@ -6,8 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "intervention/image": "^2.4",
         "fideloper/proxy": "~3.3",
+        "intervention/image": "^2.4",
         "laravel/framework": "5.5.23",
         "laravel/tinker": "~1.0"
     },
