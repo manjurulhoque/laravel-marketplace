@@ -16,7 +16,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('details/{slug}', 'GigController@show')->name('gigs.show');
     });
 
+    Route::get('my-buyer', 'BuyerSellerController@my_buyer')->name('my-buyer');
+
     Route::post('create-order', 'PurchaseController@store')->name('create.order');
+    Route::get('notification-items/{notification}', 'NotificationController@show')->name('notification.show');
 
     Route::get('/users/{username}/requests', 'BuyerRequestController@index')->name('users.requests');
 });
