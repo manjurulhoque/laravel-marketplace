@@ -33,17 +33,28 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                     @if(Auth::check())
-                        <!-- Modal -->
                             <div id="myModal" class="modal fade" role="dialog">
                                 <div class="modal-dialog">
-                                    <!-- Modal content-->
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #1b6d85; color: white">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Modal Header</h4>
+                                            <h4 class="modal-title">Order Gig</h4>
                                         </div>
                                         <div class="modal-body">
-
+                                            <form action="{{ route('create.order') }}" method="post">
+                                                {{ csrf_field() }}
+                                                <input type="hidden" value="{{ $gig->user->id }}" name="to_user_id">
+                                                <input type="hidden" value="{{ $gig->id }}" name="gig_id">
+                                                <div class="form-group">
+                                                    <label for="price">Price</label>
+                                                    <input type="number" min="5" required value="5" name="price" class="form-control" id="price">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="price">Days</label>
+                                                    <input type="number" min="1" required value="1" name="days" class="form-control" id="price">
+                                                </div>
+                                                <input type="submit" value="Order!" class="btn btn-success">
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

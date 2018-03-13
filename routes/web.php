@@ -4,6 +4,8 @@ Route::get('/', 'HomeController@index');
 Route::get('/search', 'HomeController@search')->name('search');
 Auth::routes();
 
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -13,6 +15,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('store', 'GigController@store')->name('gigs.store');
         Route::get('details/{slug}', 'GigController@show')->name('gigs.show');
     });
+
+    Route::post('create-order', 'PurchaseController@store')->name('create.order');
 
     Route::get('/users/{username}/requests', 'BuyerRequestController@index')->name('users.requests');
 });
