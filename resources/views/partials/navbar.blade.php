@@ -102,6 +102,28 @@
                                 <li><a href="{{ route('users.requests', Auth::user()->name) }}">Buyer Requests</a></li>
                             </ul>
                         </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-expanded="false"><i class="fa fa-fw fa-bell-o"></i> Notifications <span
+                                        class="badge">{{ count(Auth::user()->unreadNotifications) }}</span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                @foreach(Auth::user()->unreadNotifications as $notification)
+                                    <li>
+                                        <a href="{{ $notification->id }}">
+                                            @if($notification->data['image'] == null)
+                                                <img src="/img/avatar.png" class="pull-left" height="50" width="50">
+                                            @else
+                                                <img src="{{asset('/img/' . $notification->data['image'])}}"
+                                                     class="pull-left" height="50" width="50">
+                                            @endif
+                                            {{ $notification->data['name'] }} {{ $notification->data['body'] }}
+                                            <img src="{{asset('/gigs/img/'.App\Gig::find($notification->data['gig']['id'])->image)}}" alt="" class="pull-right" style="width: 50px; height: 50px">
+                                            <p class="center-block">{{Carbon\Carbon::parse($notification->data['created_at']['date'])->diffForHumans()}}</p>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
                     </ul>
                 @endif
             </div>

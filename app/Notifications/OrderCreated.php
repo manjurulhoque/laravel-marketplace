@@ -12,16 +12,18 @@ class OrderCreated extends Notification
     use Queueable;
     private $purchase;
     private $user;
+    private $gig;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($purchase, $user)
+    public function __construct($purchase, $user, $gig)
     {
         $this->purchase = $purchase;
         $this->user = $user;
+        $this->gig = $gig;
     }
 
     /**
@@ -60,7 +62,10 @@ class OrderCreated extends Notification
         return [
             'from' => $this->user->name,
             'name'=> $this->user->name,
+            'image' => $this->user->profile->avatar,
+            'created_at' => $this->purchase->created_at,
             'body' => ' Created an order',
+            'gig' => $this->gig,
         ];
     }
 }

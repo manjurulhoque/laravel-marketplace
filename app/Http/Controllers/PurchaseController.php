@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Gig;
 use App\Http\Requests\CreatePurchaseRequest;
 use App\Notifications\OrderCreated;
 use App\Purchase;
@@ -12,14 +13,17 @@ use Auth;
 class PurchaseController extends Controller
 {
     protected $purchase;
-    function __construct(Purchase $purchase)
+    protected $gig;
+    function __construct(Purchase $purchase, Gig $gig)
     {
         $this->purchase = $purchase;
+        $this->gig = $gig;
     }
 
     public function store(CreatePurchaseRequest $request)
     {
         $user = User::find($request->to_user_id);
+        $g = $this->gig::find($request->gig_id);
         $p = new Purchase();
         $p->price = $request->price;
         $p->user_id = Auth::user()->id;
@@ -28,7 +32,7 @@ class PurchaseController extends Controller
         $p->days = $request->days;
         $p->save();
 
-        $user->notify(new OrderCreated($p, Auth::user()));
+        $user->notify(new OrderCreated($p, Auth::user(), $g));
 
         return redirect()->route('home');
     }
