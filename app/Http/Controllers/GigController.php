@@ -51,7 +51,7 @@ class GigController extends Controller
         $this->gig->user_id = Auth::user()->id;
         $this->gig->title = $request->title;
         $this->gig->slug = str_slug($request->title);
-        $this->gig->category = $request->category;
+        $this->gig->category_id = $request->category_id;
         $this->gig->description = $request->description;
         $this->gig->price = $request->price;
         $this->gig->status = $request->status;

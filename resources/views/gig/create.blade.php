@@ -17,7 +17,7 @@
                 <div class="form-group">
                     <label for="category" class="col-sm-2 control-label">CATEGORY</label>
                     <div class="col-sm-10">
-                        <select id="category" name="category" class="form-control">
+                        <select id="category" name="category_id" class="form-control">
                             @foreach($categories as $category)
                                 <option value="{{$category->id}}">{{ $category->title }}</option>
                             @endforeach
