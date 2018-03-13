@@ -13,6 +13,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('store', 'GigController@store')->name('gigs.store');
         Route::get('details/{slug}', 'GigController@show')->name('gigs.show');
     });
+
+    Route::get('/users/{username}/requests', 'BuyerRequestController@index')->name('users.requests');
 });
 
 

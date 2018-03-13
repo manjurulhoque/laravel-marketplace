@@ -36,4 +36,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Gig::class);
     }
+
+    public function request()
+    {
+        return $this->hasMany(BuyerRequest::class);
+    }
 }

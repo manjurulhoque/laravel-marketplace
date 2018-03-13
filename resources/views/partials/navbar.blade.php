@@ -93,6 +93,15 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button" aria-haspopup="true" aria-expanded="false">
+                                Selling <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('users.requests', Auth::user()->name) }}">Buyer Requests</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 @endif
             </div>
