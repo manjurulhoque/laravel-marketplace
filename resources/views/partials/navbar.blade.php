@@ -31,21 +31,11 @@
                                     <div class="col-sm-3">
                                         <h5>Category</h5>
                                         <ul>
-                                            <li>
-                                                <a href="#">Graphis & Design</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Digital & Marketing</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Video & Animation</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Music & Video</a>
-                                            </li>
-                                            <li>
-                                                <a href="#">Programming & Tech</a>
-                                            </li>
+                                            @foreach($categories as $category)
+                                                <li>
+                                                    <a href="#">{{ $category->title }}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </div>
@@ -99,6 +89,7 @@
                                 Selling <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu">
+                                <li><a href="{{ route('create.request', Auth::user()->name) }}">Create Request</a></li>
                                 <li><a href="{{ route('users.requests', Auth::user()->name) }}">Buyer Requests</a></li>
                             </ul>
                         </li>

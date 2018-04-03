@@ -13,7 +13,7 @@
                         </a>
                         <div class="caption">
                             <p><a href="{{ route('gigs.show', $gig->id) }}">{{ $gig->title }}</a></p>
-                            <p><span>by <a href="">{{ $gig->user->name }}</a></span>
+                            <p><span>by <a href="{{ route('profile', $gig->user->name) }}">{{ $gig->user->name }}</a></span>
                                 <b class="green pull-right">STARTING AT ${{ $gig->price }}</b>
                             </p>
                         </div>

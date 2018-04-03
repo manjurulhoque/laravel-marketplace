@@ -4,6 +4,7 @@ Route::get('/', 'HomeController@index');
 Route::get('/search', 'HomeController@search')->name('search');
 Auth::routes();
 
+Route::get('/users/{name}', 'ProfileController@user_profile')->name('profile');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -22,6 +23,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('notification-items/{notification}', 'NotificationController@show')->name('notification.show');
 
     Route::get('/users/{username}/requests', 'BuyerRequestController@index')->name('users.requests');
+    Route::get('/users/{username}/create-request', 'BuyerRequestController@create')->name('create.request');
+    Route::post('/users/{username}/store-request', 'BuyerRequestController@store')->name('store.request');
 });
 
 
