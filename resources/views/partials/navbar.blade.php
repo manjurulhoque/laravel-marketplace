@@ -127,6 +127,8 @@
                                                 <p class="center-block">{{Carbon\Carbon::parse($notification->data['created_at']['date'])->diffForHumans()}}</p>
                                             </a>
                                         </li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="{{ route('read.all') }}">Mark all as read</a></li>
                                     @endforeach
                                 </ul>
                             @endif
