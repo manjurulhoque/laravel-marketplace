@@ -57,9 +57,9 @@
                             <div class="caption">
                                 <p><a href="">{{ $gig->title }}</a></p>
                                 <p>
-                        <span>
-                        <a href="">By {{ $gig->user->username }}</a>
-                        </span>
+                                    <span>
+                                    <a href="">By {{ $gig->user->username }}</a>
+                                    </span>
                                     <b class="green pull-right">$ {{ $gig->price }}</b>
                                 </p>
                             </div>
