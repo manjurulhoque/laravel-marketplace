@@ -6,11 +6,16 @@
             <form class="form-horizontal" action="{{ route('gigs.store') }}" method="post"
                   enctype="multipart/form-data">
                 {{ csrf_field() }}
-                <div class="form-group">
+                <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                     <label for="title" class="col-sm-2 control-label">GIG TITLE</label>
                     <div class="col-sm-10 wrap">
                         <textarea rows="3" id="title" class="form-control" name="title"></textarea>
                         <span class="gig-before-title">I will</span>
+                        @if ($errors->has('title'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('title') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>
 
@@ -30,10 +35,15 @@
                         <textarea rows="5" class="form-control" name="description"></textarea>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group{{ $errors->has('price') ? ' has-error' : '' }}">
                     <label class="col-sm-2 control-label">PRICE ($)</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" value="5" name="price">
+                        <input type="number" class="form-control" min="5" value="5" name="price">
+                        @if ($errors->has('price'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('price') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>
                 <div class="form-group">

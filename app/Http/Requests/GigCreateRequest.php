@@ -25,8 +25,8 @@ class GigCreateRequest extends FormRequest
     {
         return [
             'title'       => 'required|max:255',
-            'price'       => 'required',
-            'category_id'    => 'required',
+            'price'       => 'required|integer|min:5',
+            'category_id' => 'required',
             'description' => 'required'
         ];
     }
