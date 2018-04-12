@@ -7,19 +7,19 @@
                 <div class="form-group">
                     <label for="request" class="col-sm-2 control-label">Request Description</label>
                     <div class="col-sm-10">
-                        <textarea rows="3" id="request" class="form-control" name="request"></textarea>
+                        <textarea rows="3" id="request" class="form-control" name="description"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                         <label class="col-sm-2 control-label">Duration</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" name="duration">
+                            <input type="number" min="1" value="1" class="form-control" name="duration">
                         </div>
                     </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Budget ($)</label>
                     <div class="col-sm-10">
-                        <input type="number" class="form-control" name="budget">
+                        <input type="number" min="5" value="5" class="form-control" name="budget">
                     </div>
                 </div>
                 <div class="form-group">

@@ -30,7 +30,7 @@ class BuyerRequestController extends Controller
         $br = new BuyerRequest;
 
         $br->user_id = Auth::user()->id;
-        $br->request = $request->request;
+        $br->request = $request->description;
         $br->duration = $request->duration;
         $br->budget = $request->budget;
 

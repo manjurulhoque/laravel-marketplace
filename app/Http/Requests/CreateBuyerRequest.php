@@ -24,7 +24,7 @@ class CreateBuyerRequest extends FormRequest
     public function rules()
     {
         return [
-            'request'       => 'required',
+            'description'       => 'required',
         ];
     }
 }
